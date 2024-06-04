@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: graphql_course
+  host: <%= ENV.fetch("DATABASE_HOST") %>
+  port: <%= ENV.fetch("DATABASE_PORT") %>
+
+development:
+  <<: *default
+  database: graphql_course_development
+
+test:
+  <<: *default
+  database: graphql_course_test
+
+production:
+  <<: *default
+  database: graphql_course_production
+  username: graphql_course
+  password:
