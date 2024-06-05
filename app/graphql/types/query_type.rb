@@ -37,5 +37,17 @@ module Types
     def author(id:)
       Author.where(id: id).first
     end
+
+    ### sessions
+    field :login, String, null: true, description: "login a user" do
+      argument :email, String, required: true
+      argument :password, String, required: true
+    end
+
+    def login(email:, password:)
+      if user = User.where(email: email).first&.authenticate(password)
+        user.sessions.create.key
+      end
+    end
   end
 end
