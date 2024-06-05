@@ -48,3 +48,25 @@ variable
   }
 }
 ```
+
+### with for update users
+
+```
+mutation updateAuthor($author: AuthorInputType!) {
+  updateAuthor(author: $author)
+}
+```
+
+variables
+
+```
+{
+  "author": {
+    "id": "fef15273-ac56-4265-bd0b-5a6440c196d4",
+    "firstName": "Celine",
+    "lastName": "Young",
+    "yob": 1993,
+    "isAlive": true
+  }
+}
+```
