@@ -30,8 +30,12 @@ class Types::AuthorType < Types::BaseObject
     def authors
         Author.all
     end
-end
 
+    def self.authorized?(object, context)
+      !object.is_alive
+    end
+end
+# [[false, "58162b25-3cbb-4026-b6aa-7d553ca65969"], [true, "3ee08c8f-62d7-48c6-9cac-4d883e0252e9"]] 
 class Types::AuthorInputType < GraphQL::Schema::InputObject
   graphql_name "AuthorInputType"
   description "All the attributes needed to create/update an author"
