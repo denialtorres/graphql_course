@@ -70,3 +70,11 @@ variables
   }
 }
 ```
+
+### for delete a record
+
+```
+mutation {
+  deleteAuthor(id: "fef15273-ac56-4265-bd0b-5a6440c196d4")
+}
+```
