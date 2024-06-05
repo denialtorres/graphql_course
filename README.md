@@ -1,24 +1,26 @@
-# README
+# Example of query mutation with variables
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+mutation createAuthor($first_name: String, $last_name: String, $yob: Int, $is_alive: Boolean) {
+  createAuthor(
+    firstName: $first_name
+    lastName: $last_name
+    yob: $yob
+    isAlive: $is_alive
+  ) {
+    id
+    fullName
+  }
+}
+```
 
-Things you may want to cover:
+in variables
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+{
+  "first_name": "Mitski",
+  "last_name": "Laycock",
+  "yob": 1990,
+  "is_alive": true
+}
+```
