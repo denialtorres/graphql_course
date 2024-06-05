@@ -24,3 +24,27 @@ in variables
   "is_alive": true
 }
 ```
+
+### With a custom input type
+
+```
+mutation createAuthor($author: AuthorInputType!) {
+  createAuthor(author: $author) {
+    id
+    fullName
+  }
+}
+```
+
+variable
+
+```
+{
+  "author": {
+    "firstName": "Phoebe",
+    "lastName": "Bridgers",
+    "yob": 1993,
+    "isAlive": true
+  }
+}
+```
