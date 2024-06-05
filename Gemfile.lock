@@ -281,6 +281,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-23
 
 DEPENDENCIES
   audited
@@ -308,7 +309,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.0.5p211
 
 BUNDLED WITH
-   2.2.3
+   2.2.33
