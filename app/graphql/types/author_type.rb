@@ -16,6 +16,13 @@ class Types::AuthorType < Types::BaseObject
     field :coordinates, Types::CoordinatesType, null: false
     field :publication_years, [Int], null: false
 
+    # error validation
+    field :errors, [Types::ErrorType], null: true
+
+    def errors
+      object.errors.map{|e| {field_name: e.attribute, errors: object.errors[e.attribute]}}
+    end
+
     # root fields
 
     field :authors, [Types::AuthorType], null: false
